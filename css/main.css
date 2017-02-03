@@ -106,7 +106,8 @@ section {
   border: none; }
 
 .time-control {
-  margin: 5vh 0; }
+  margin: 6vh 0 0 0;
+  height: 91px; }
   .time-control h2 {
     color: white;
     display: inline-block;

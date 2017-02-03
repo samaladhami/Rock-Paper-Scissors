@@ -9,14 +9,14 @@ function countdown(minutes, seconds = 60) {
   mins = minutes
 
   function tick() {
-    // subtract 1 from mins
+    // subtract 1 from the minutes
       if (mins >= 0 && secs === 0) {
         currentMinutes = mins-1;
       }
       else {
         currentMinutes = mins
       }
-      // subtract 1 from secs
+      // subtract 1 from seconds
       secs--;
       const counter = document.getElementById( "counter" );
       // update the counter html
