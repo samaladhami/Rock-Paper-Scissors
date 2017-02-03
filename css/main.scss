@@ -23,12 +23,16 @@ body{
 
 }
 
+.header-text{
+  color: $orange;
+  font-size: 50px;
+  font-family: 'Coiny', cursive;
+  text-shadow: 1px -1px white, 3px 1px 3px black;
+}
+
 header{
   h1{
-    color: $orange;
-    font-size: 50px;
-    font-family: 'Coiny', cursive;
-    text-shadow: 1px -1px white, 3px 1px 3px black;
+    @extend .header-text;
   }
 }
 
@@ -62,19 +66,37 @@ header{
   }
   button{
     color: white;
+    box-shadow: 1px 1px 2px black, 3px 2px white;
     -webkit-border-radius: 10;
     -moz-border-radius: 10;
     border-radius: 10px;
-    font-size: 20px;
-    background: white;
+    font-size: 18px;
     padding: 10px 20px 10px 20px;
     margin-left: 3vw;
     border: none;
   }
   .start{
-    background: #2eda6c;
-    padding-left: 29px;
-    padding-right: 29px;
+    background: #27ff1c;
+    background-image: -webkit-linear-gradient(top, #27ff1c, #016101);
+    background-image: -moz-linear-gradient(top, #27ff1c, #016101);
+    background-image: -ms-linear-gradient(top, #27ff1c, #016101);
+    background-image: -o-linear-gradient(top, #27ff1c, #016101);
+    background-image: linear-gradient(to bottom, #27ff1c, #016101);
+    padding: 10px 29px;
+    &:hover{
+      background: #24a753;
+    }
+    &:active{
+      background: #1f7d41;
+    }
+  }
+  .restart{
+    background: #e02f4a;
+    background-image: -webkit-linear-gradient(top, #e02f4a, #42000a);
+    background-image: -moz-linear-gradient(top, #e02f4a, #42000a);
+    background-image: -ms-linear-gradient(top, #e02f4a, #42000a);
+    background-image: -o-linear-gradient(top, #e02f4a, #42000a);
+    background-image: linear-gradient(to bottom, #e02f4a, #42000a);
     &:hover{
       background: #942132;
     }
@@ -82,13 +104,20 @@ header{
       background: #540b16;
     }
   }
-  .restart{
-    background: #c0273c;
-    &:hover{
-      background: #942132;
-    }
-    &:active{
-      background: #540b16;
+}
+
+.play{
+  display: flex;
+  justify-content: space-around;
+  div{
+    background: white;
+    border-radius: 10px;
+    display: inline-block;
+    margin: $vertical-space;
+    width: 40%;
+    height: 18vh;
+    h2{
+      @extend .header-text;
     }
   }
 }
