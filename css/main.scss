@@ -1,3 +1,94 @@
 // CSS Reset
 @import "reset";
 //
+$sky-color: #73bef0;
+$orange: #ff9f66;
+$vertical-space: 3vh 0;
+
+*:focus {
+  outline: none;
+}
+
+body{
+  background: #73bef0;
+  // cross browsers
+  background-image: -webkit-linear-gradient(top, $sky-color, white);
+  background-image: -moz-linear-gradient(top, $sky-color, white);
+  background-image: -o-linear-gradient(top, $sky-color, white);
+  background-image: -ms-linear-gradient(top, $sky-color, white);
+  background-image: linear-gradient(to bottom, $sky-color, white);
+  //
+  height: 100vh;
+  text-align: center;
+
+}
+
+header{
+  h1{
+    color: $orange;
+    font-size: 50px;
+    font-family: 'Coiny', cursive;
+    text-shadow: 1px -1px white, 3px 1px 3px black;
+  }
+}
+
+.input-group{
+  margin: $vertical-space;
+  span {
+    color: white;
+    font-size: 25px;
+  }
+  .my-input{
+    width: 81px;
+    height: 56px;
+    border-radius: 5px;
+    border: 3px solid #fbfbfb;
+    background: #e0f0fb;
+    font-size: 33px;
+    text-align: center;
+  }
+}
+
+
+
+.time-control{
+  margin: $vertical-space;
+  h2{
+    color: white;
+    display: inline-block;
+    font-size: 33px;
+    font-family: monospace;
+    text-shadow: 2px 1px 3px black;
+  }
+  button{
+    color: white;
+    -webkit-border-radius: 10;
+    -moz-border-radius: 10;
+    border-radius: 10px;
+    font-size: 20px;
+    background: white;
+    padding: 10px 20px 10px 20px;
+    margin-left: 3vw;
+    border: none;
+  }
+  .start{
+    background: #2eda6c;
+    padding-left: 29px;
+    padding-right: 29px;
+    &:hover{
+      background: #942132;
+    }
+    &:active{
+      background: #540b16;
+    }
+  }
+  .restart{
+    background: #c0273c;
+    &:hover{
+      background: #942132;
+    }
+    &:active{
+      background: #540b16;
+    }
+  }
+}
