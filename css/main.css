@@ -1,3 +1,4 @@
+@import url("http://fonts.googleapis.com/css?family=Coiny");
 html {
   color: #000;
   background: #FFF; }
@@ -53,7 +54,8 @@ legend {
   display: none; }
 
 *:focus {
-  outline: none; }
+  outline: none;
+  box-sizing: border-box; }
 
 body {
   background: #73bef0;
@@ -65,28 +67,46 @@ body {
   height: 100vh;
   text-align: center; }
 
-.header-text, header h1, .play div h2 {
+.header-text, header h1, .show-chosen div h2 {
   color: #ff9f66;
   font-size: 50px;
   font-family: 'Coiny', cursive;
   text-shadow: 1px -1px white, 3px 1px 3px black; }
 
+section {
+  width: 80%;
+  margin: auto;
+  border: 1px solid white;
+  padding: 10px;
+  border-top: none; }
+
 .input-group {
-  margin: 3vh 0; }
+  margin: 5vh 0; }
   .input-group span {
     color: white;
     font-size: 25px; }
   .input-group .my-input {
+    color: dimgrey;
     width: 81px;
     height: 56px;
     border-radius: 5px;
-    border: 3px solid #fbfbfb;
+    border: 2px solid #fbfbfb;
     background: #e0f0fb;
     font-size: 33px;
     text-align: center; }
 
+.my-block, .time-control button, .dashboard .btn-group button, .dashboard .score div {
+  box-shadow: 1px 1px 2px black, 3px 2px white;
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border-radius: 10px;
+  font-size: 18px;
+  padding: 10px 20px 10px 20px;
+  margin-left: 3vw;
+  border: none; }
+
 .time-control {
-  margin: 3vh 0; }
+  margin: 5vh 0; }
   .time-control h2 {
     color: white;
     display: inline-block;
@@ -94,22 +114,14 @@ body {
     font-family: monospace;
     text-shadow: 2px 1px 3px black; }
   .time-control button {
-    color: white;
-    box-shadow: 1px 1px 2px black, 3px 2px white;
-    -webkit-border-radius: 10;
-    -moz-border-radius: 10;
-    border-radius: 10px;
-    font-size: 18px;
-    padding: 10px 20px 10px 20px;
-    margin-left: 3vw;
-    border: none; }
+    color: white; }
   .time-control .start {
-    background: #27ff1c;
-    background-image: -webkit-linear-gradient(top, #27ff1c, #016101);
-    background-image: -moz-linear-gradient(top, #27ff1c, #016101);
-    background-image: -ms-linear-gradient(top, #27ff1c, #016101);
-    background-image: -o-linear-gradient(top, #27ff1c, #016101);
-    background-image: linear-gradient(to bottom, #27ff1c, #016101);
+    background: #95ff8f;
+    background-image: -webkit-linear-gradient(top, #95ff8f, #50a150);
+    background-image: -moz-linear-gradient(top, #95ff8f, #50a150);
+    background-image: -ms-linear-gradient(top, #95ff8f, #50a150);
+    background-image: -o-linear-gradient(top, #95ff8f, #50a150);
+    background-image: linear-gradient(to bottom, #95ff8f, #50a150);
     padding: 10px 29px; }
     .time-control .start:hover {
       background: #24a753; }
@@ -127,13 +139,39 @@ body {
     .time-control .restart:active {
       background: #540b16; }
 
-.play {
+.show-chosen {
   display: flex;
-  justify-content: space-around; }
-  .play div {
+  justify-content: space-around;
+  margin: 5vh 0; }
+  .show-chosen div {
     background: white;
     border-radius: 10px;
     display: inline-block;
-    margin: 3vh 0;
-    width: 40%;
-    height: 18vh; }
+    width: 167px;
+    padding-top: 10px;
+    height: 113px;
+    box-shadow: 2px 1px 4px dimgrey, 0px -1px 2px dimgrey; }
+    .show-chosen div h2 {
+      color: #e0e0e0;
+      text-shadow: 1px -1px white, 3px 1px 2px black, 0px -1px 1px black; }
+
+.dashboard {
+  margin: 5vh 0;
+  display: flex;
+  justify-content: space-around; }
+  .dashboard .btn-group {
+    display: inline-block; }
+    .dashboard .btn-group button {
+      font-size: 40px;
+      padding: 14px;
+      background: white; }
+      .dashboard .btn-group button:hover {
+        background: lightgray; }
+      .dashboard .btn-group button:active {
+        background: dimgray; }
+  .dashboard .score {
+    color: white; }
+    .dashboard .score div {
+      display: inline-block;
+      background: dimgray;
+      border: 1px solid #4a4a4a; }

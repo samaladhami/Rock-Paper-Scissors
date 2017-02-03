@@ -1,12 +1,15 @@
 // CSS Reset
 @import "reset";
+// Google Fonts
+@import url('http://fonts.googleapis.com/css?family=Coiny');
 //
 $sky-color: #73bef0;
 $orange: #ff9f66;
-$vertical-space: 3vh 0;
+$vertical-space: 5vh 0;
 
 *:focus {
   outline: none;
+  box-sizing: border-box;
 }
 
 body{
@@ -35,6 +38,13 @@ header{
     @extend .header-text;
   }
 }
+section{
+  width: 80%;
+  margin: auto;
+  border: 1px solid white;
+  padding: 10px;
+  border-top: none;
+}
 
 .input-group{
   margin: $vertical-space;
@@ -43,17 +53,28 @@ header{
     font-size: 25px;
   }
   .my-input{
+    color: dimgrey;
     width: 81px;
     height: 56px;
     border-radius: 5px;
-    border: 3px solid #fbfbfb;
+    border: 2px solid #fbfbfb;
     background: #e0f0fb;
     font-size: 33px;
     text-align: center;
   }
 }
 
+.my-block{
+  box-shadow: 1px 1px 2px black, 3px 2px white;
+  -webkit-border-radius: 10;
+  -moz-border-radius: 10;
+  border-radius: 10px;
+  font-size: 18px;
+  padding: 10px 20px 10px 20px;
+  margin-left: 3vw;
+  border: none;
 
+}
 
 .time-control{
   margin: $vertical-space;
@@ -66,22 +87,15 @@ header{
   }
   button{
     color: white;
-    box-shadow: 1px 1px 2px black, 3px 2px white;
-    -webkit-border-radius: 10;
-    -moz-border-radius: 10;
-    border-radius: 10px;
-    font-size: 18px;
-    padding: 10px 20px 10px 20px;
-    margin-left: 3vw;
-    border: none;
+    @extend .my-block;
   }
   .start{
-    background: #27ff1c;
-    background-image: -webkit-linear-gradient(top, #27ff1c, #016101);
-    background-image: -moz-linear-gradient(top, #27ff1c, #016101);
-    background-image: -ms-linear-gradient(top, #27ff1c, #016101);
-    background-image: -o-linear-gradient(top, #27ff1c, #016101);
-    background-image: linear-gradient(to bottom, #27ff1c, #016101);
+    background: #95ff8f;
+    background-image: -webkit-linear-gradient(top, #95ff8f, #50a150);
+    background-image: -moz-linear-gradient(top, #95ff8f, #50a150);
+    background-image: -ms-linear-gradient(top, #95ff8f, #50a150);
+    background-image: -o-linear-gradient(top, #95ff8f, #50a150);
+    background-image: linear-gradient(to bottom, #95ff8f, #50a150);
     padding: 10px 29px;
     &:hover{
       background: #24a753;
@@ -106,18 +120,55 @@ header{
   }
 }
 
-.play{
+.show-chosen{
   display: flex;
   justify-content: space-around;
+  margin: $vertical-space;
   div{
     background: white;
     border-radius: 10px;
     display: inline-block;
-    margin: $vertical-space;
-    width: 40%;
-    height: 18vh;
+    width: 167px;
+    padding-top: 10px;
+    height: 113px;
+    box-shadow: 2px 1px 4px dimgrey, 0px -1px 2px dimgrey;
     h2{
       @extend .header-text;
+      color: #e0e0e0;
+      text-shadow: 1px -1px white, 3px 1px 2px black, 0px -1px 1px black;
+    }
+  }
+}
+
+.dashboard{
+  margin: $vertical-space;
+  display: flex;
+  justify-content: space-around;
+  .btn-group{
+    display: inline-block;
+    button{
+      @extend .my-block;
+      font-size: 40px;
+      padding: 14px;
+      background: white;
+      &:hover{
+        background: lightgray;
+      }
+      &:active{
+        background: dimgray;
+      }
+    }
+  }
+  .score{
+    color: white;
+    div{
+      @extend .my-block;
+      display: inline-block;
+      background: dimgray;
+      border: 1px solid #4a4a4a;
+      h2{
+
+      }
     }
   }
 }

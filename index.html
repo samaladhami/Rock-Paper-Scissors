@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width" />
     <title>Rock-Paper-Scossors</title>
-    <!-- google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
+    <!-- fa awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <!--  -->
     <link rel="stylesheet" href="css/main.css" media="screen" title="no title">
   </head>
@@ -24,12 +24,30 @@
         <button class="start" id='start-btn' type="button" name="button">Start</button>
         <button  class="restart" id='restart-btn' type="button" name="button">Restart</button>
       </div>
-      <div class="play">
+      <div class="show-chosen">
         <div class="user">
           <h2>YOU</h2>
         </div>
         <div class="BOT">
           <h2>BOT</h2>
+        </div>
+      </div>
+      <div class="dashboard">
+        <div class="btn-group">
+          <button type="button" name="button" class="fa fa-hand-rock-o" aria-hidden="true"></button>
+          <button type="button" name="button" class="fa fa-hand-paper-o" aria-hidden="true"></button>
+          <button type="button" name="button" class="fa fa-hand-scissors-o" aria-hidden="true"></button>
+        </div>
+        <div class="score">
+          <div class="wins">
+            wins: <h2>0</h2>
+          </div>
+          <div class="losses">
+            losses: <h2>0</h2>
+          </div>
+          <div class="draws">
+            draws: <h2>0</h2>
+          </div>
         </div>
       </div>
 
