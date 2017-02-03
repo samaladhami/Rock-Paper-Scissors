@@ -15,12 +15,12 @@
     </header>
     <section>
       <div class="input-group">
-        <input class="my-input" type="text" name="name" value="" placeholder="Min">
+        <input id="min" class="my-input" type="text" name="name" value="" placeholder="Min" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
         <span>:</span>
-        <input class="my-input" type="text" name="name" value="" placeholder="Sec">
+        <input id="sec" class="my-input" type="text" name="name" value="" placeholder="Sec" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
       </div>
       <div class="time-control">
-        <h2 class="timer">00:00</h2>
+        <h2 id="counter">00:00</h2>
         <button class="start" id='start-btn' type="button" name="button">Start</button>
         <button  class="restart" id='restart-btn' type="button" name="button">Restart</button>
       </div>
@@ -52,5 +52,8 @@
       </div>
 
     </section>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="js/counter.js" charset="utf-8"></script>
+    <script src="js/app.js" charset="utf-8"></script>
   </body>
 </html>
