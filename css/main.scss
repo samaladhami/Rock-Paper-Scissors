@@ -20,19 +20,15 @@ body{
   background-image: -o-linear-gradient(top, $sky-color, white);
   background-image: -ms-linear-gradient(top, $sky-color, white);
   background-image: linear-gradient(to bottom, $sky-color, white);
-  //
   height: 100vh;
   text-align: center;
-
 }
-
 .header-text{
   color: $orange;
   font-size: 50px;
   font-family: 'Coiny', cursive;
   text-shadow: 1px -1px white, 3px 1px 3px black;
 }
-
 header{
   h1{
     @extend .header-text;
@@ -78,7 +74,6 @@ section{
   padding: 10px 20px 10px 20px;
   margin-left: 3vw;
   border: none;
-
 }
 
 .time-control{
@@ -97,7 +92,6 @@ section{
     box-shadow: 1px 1px 2px dimgray;
   }
   .start{
-
     background: #95ff8f;
     background-image: -webkit-linear-gradient(top, #95ff8f, #1a881a);
     background-image: -moz-linear-gradient(top, #95ff8f, #1a881a);
@@ -193,9 +187,13 @@ section{
   }
 }
 #gameOver{
+  @extend .time-control;
+  padding: 0;
+  margin: 0;
+  height: auto;
   position: absolute;
   top: 29%;
-  left: 29%;
+  left: 33%;
   width: 320px;
   background: rgba(58, 58, 58, 0.48);
   border-radius: 10px;
@@ -208,6 +206,17 @@ section{
   }
   h1{
     @extend .header-text;
-    color: #77d673; // if win
+  }
+  h2{
+    display: block;
+  }
+  button{
+    margin: 19px 0;
+    &:hover{
+      background: dimgray;
+    }
+    &:active{
+      background: black;
+    }
   }
 }
