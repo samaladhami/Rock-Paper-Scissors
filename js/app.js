@@ -2,9 +2,9 @@
 let validInput;
 let minutes;
 let seconds;
+let countingThemeInterval;
 $(document).ready(function(){
-  // the inupt value
-  let startTime;
+  let startTime;   // the inupt value
   let timeArray;
   // update the inupt value
   $( '#min, #sec' ).keyup( ( ) => {
@@ -33,24 +33,19 @@ $(document).ready(function(){
     if(validInput){
       minutes = Number( timeArray[0] );
       seconds = Number( timeArray[1] );
-      $( '#counter' ).animate({
+      $( '#counter' ).animate({ // change the font-size
         'font-size' : '50px'
       })
-      // countdown from counter.js
-      countdown(minutes , seconds);
-      // alert ther user when the counter < 10
-      let test = setInterval( ( ) => {
-        if(currentMinutes === 0 && secs < 10 && secs > 0 ) {
-          $( '#counter' ).css( 'color' , 'red' );
-        }
-        else if(secs === 0 ){
-          $( '#counter' ).removeAttr( 'style' )
-          clearInterval(test)
+      countdown(minutes , seconds); // countdown from counter.js to start counting
+      // once the user clicks on #start-btn it constantly checks the counter value and changes the #counter color
+      countingThemeInterval = setInterval( ( ) => {
+        if(currentMinutes === 0 && secs <= 10 ) {
+          $( '#counter' ).css( 'color' , 'red' );   // alert ther user when the counter < 10
         }
         else if( secs > 10  || currentMinutes > 0){
-          $( '#counter' ).css( 'color' , '#93f97c' );
+          $( '#counter' ).css( 'color' , '#93f97c' ); // green color when the counter > 10
         }
-      } , 0)
+      } , 10)
     }
   } )
 

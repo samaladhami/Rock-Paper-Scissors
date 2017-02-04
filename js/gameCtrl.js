@@ -1,27 +1,23 @@
 'use strict';
 $( document ).ready(function(){
-  // reset the input border color
-  $( '#min , #sec' ).click( ( ) => {
+  $( '#min , #sec' ).click( ( ) => {   // reset the input border color
     $( '#min , #sec' ).removeAttr( 'style' );
     $( '.input-group > h2' ).text( '' );
   });
 
-  $( '#start-btn' ).click( function() {
+  $( '#start-btn' ).click( function() { // when start is clicked
     if (validInput) {
-      // disable start button and the input
-      $( '#start-btn , #min , #sec' ).prop( 'disabled' , true )
-               .css( 'cursor' , 'not-allowed' );
-      // enable the game buttons
-      $('#rock-btn , #paper-btn , #scissors-btn , #restart-btn').prop( 'disabled' , false )
+      $( '#start-btn , #min , #sec' ).prop( 'disabled' , true ) // disable start button and the input
+                                     .css( 'cursor' , 'not-allowed' );
+      $('#rock-btn , #paper-btn , #scissors-btn , #restart-btn').prop( 'disabled' , false )// enable the game buttons
                                                                 .css( 'cursor' , 'default' );
-
-      $('#restart-btn').click( () => {
-        clearTimeout( tickTimeout )
-        countdown(minutes , seconds);
+      $('#restart-btn').click( () => { //when restart is clicked
+        clearTimeout( tickTimeout ); // stop counter.js from calling tick function
+        wins = losses = draws = 0;   // from playEngine.js
+        $( '.score  h2' ).text( 0 ); // all "h2" that are descendants of ".score"
+        countdown(minutes , seconds);//start over (countdown from counter.js)
 
       })
     }
-    $('section').empty()
   })
-
 })
