@@ -153,8 +153,6 @@ section{
     -o-transform: scaleX(-1);
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
-    filter: FlipH;
-    -ms-filter: "FlipH";
   }
   img{
     height: 100%
@@ -192,5 +190,24 @@ section{
 
       }
     }
+  }
+}
+#gameOver{
+  position: absolute;
+  top: 29%;
+  left: 29%;
+  width: 320px;
+  background: rgba(58, 58, 58, 0.48);
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.48);
+  >div{
+    width: 100%;
+    padding-top: 19px;
+    background: rgba(255, 255, 255, 0.57);
+    border-radius: 10px 10px 0 0;;
+  }
+  h1{
+    @extend .header-text;
+    color: #77d673; // if win
   }
 }

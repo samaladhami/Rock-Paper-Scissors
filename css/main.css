@@ -67,7 +67,7 @@ body {
   height: 100vh;
   text-align: center; }
 
-.header-text, header h1, .show-chosen div h2 {
+.header-text, header h1, .show-chosen div h2, #gameOver h1 {
   color: #ff9f66;
   font-size: 50px;
   font-family: 'Coiny', cursive;
@@ -165,9 +165,7 @@ section {
     -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
     -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-    filter: FlipH;
-    -ms-filter: "FlipH"; }
+    transform: scaleX(-1); }
   .show-chosen img {
     height: 100%; }
 
@@ -192,3 +190,19 @@ section {
       display: inline-block;
       background: dimgray;
       border: 1px solid #4a4a4a; }
+
+#gameOver {
+  position: absolute;
+  top: 29%;
+  left: 29%;
+  width: 320px;
+  background: rgba(58, 58, 58, 0.48);
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.48); }
+  #gameOver > div {
+    width: 100%;
+    padding-top: 19px;
+    background: rgba(255, 255, 255, 0.57);
+    border-radius: 10px 10px 0 0; }
+  #gameOver h1 {
+    color: #77d673; }

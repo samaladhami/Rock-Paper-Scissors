@@ -17,11 +17,15 @@ $(document).ready(function(){
     (function(){
       const min = $('#min').val();
       const sec = $('#sec').val();
-      if (!parseInt( min ) && !parseInt( sec )) {
+      if( Number( min ) === 0 && sec <= 2 ) {
+        $('#min , #sec').css( 'border', '1px solid red');
+        $('.input-group > h2').text('the minimum time is 00:03');
+      }
+      else if (!min && !sec ) {
         $('#min , #sec').css( 'border', '1px solid red');
         $('.input-group > h2').text('please input a number')
       }
-      else if( Number( $('#sec').val() ) > 60 ) {
+      else if( sec  > 60 ) {
         $('#min , #sec').css( 'border', '1px solid red');
         $('.input-group > h2').text('The seconds must be less than 60');
       }
