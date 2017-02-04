@@ -1,4 +1,7 @@
 'use strict';
+let validInput;
+let minutes;
+let seconds;
 $(document).ready(function(){
   // the inupt value
   let startTime;
@@ -10,26 +13,45 @@ $(document).ready(function(){
   })
   // start counting
   $( '#start-btn' ).click( ( ) => {
-    let minutes = Number( timeArray[0] );
-    let seconds = Number( timeArray[1] );
-    $( '#counter' ).animate({
-      'font-size' : '50px'
-    })
-    // countdown from counter.js
-    countdown(minutes , seconds);
-    // alert ther user when the counter < 10
-    let test = setInterval( ( ) => {
-      if(currentMinutes === 0 && secs < 10 && secs > 0 ) {
-        $( '#counter' ).css( 'color' , 'red' );
+    // check the input value
+    (function(){
+      const min = $('#min').val();
+      const sec = $('#sec').val();
+      if (!parseInt( min ) && !parseInt( sec )) {
+        $('#min , #sec').css( 'border', '1px solid red');
+        $('.input-group > h2').text('please input a number')
       }
-      else if(secs === 0 ){
-        $( '#counter' ).removeAttr( 'style' )
-        clearInterval(test)
+      else if( Number( $('#sec').val() ) > 60 ) {
+        $('#min , #sec').css( 'border', '1px solid red');
+        $('.input-group > h2').text('The seconds must be less than 60');
       }
-      else if( secs > 10  || currentMinutes > 0){
-        $( '#counter' ).css( 'color' , '#93f97c' );
+      else {
+        validInput = true;
       }
-    } , 0)
+    }())
+    //
+    if(validInput){
+      minutes = Number( timeArray[0] );
+      seconds = Number( timeArray[1] );
+      $( '#counter' ).animate({
+        'font-size' : '50px'
+      })
+      // countdown from counter.js
+      countdown(minutes , seconds);
+      // alert ther user when the counter < 10
+      let test = setInterval( ( ) => {
+        if(currentMinutes === 0 && secs < 10 && secs > 0 ) {
+          $( '#counter' ).css( 'color' , 'red' );
+        }
+        else if(secs === 0 ){
+          $( '#counter' ).removeAttr( 'style' )
+          clearInterval(test)
+        }
+        else if( secs > 10  || currentMinutes > 0){
+          $( '#counter' ).css( 'color' , '#93f97c' );
+        }
+      } , 0)
+    }
   } )
 
 })

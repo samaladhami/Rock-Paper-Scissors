@@ -18,11 +18,12 @@
         <input id="min" class="my-input" type="text" name="name" value="" placeholder="Min" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
         <span>:</span>
         <input id="sec" class="my-input" type="text" name="name" value="" placeholder="Sec" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+        <h2></h2>
       </div>
       <div class="time-control">
         <h2 id="counter">00:00</h2>
-        <button class="start" id="start-btn" type="button" name="button" disabled="true">Start</button>
-        <button class="restart" id='restart-btn' type="button" name="button">Restart</button>
+        <button class="start" id="start-btn" type="button" name="button" >Start</button>
+        <button class="restart" id='restart-btn' type="button" name="button" disabled="true">Restart</button>
       </div>
       <div class="show-chosen">
         <div id="user">
@@ -34,9 +35,9 @@
       </div>
       <div class="dashboard">
         <div class="btn-group">
-          <button onclick='chooseOne(this)' id='rock-btn' type="button" class="fa fa-hand-rock-o" aria-hidden="true" value="rock"></button>
-          <button onclick='chooseOne(this)' id='paper-btn' type="button" class="fa fa-hand-paper-o" aria-hidden="true" value="paper"></button>
-          <button onclick='chooseOne(this)' id='scissors-btn' type="button" class="fa fa-hand-scissors-o" aria-hidden="true" value="scissors"></button>
+          <button onclick='chooseOne(this)' id='rock-btn' type="button" class="fa fa-hand-rock-o" aria-hidden="true" value="rock" disabled="true"></button>
+          <button onclick='chooseOne(this)' id='paper-btn' type="button" class="fa fa-hand-paper-o" aria-hidden="true" value="paper" disabled="true"></button>
+          <button onclick='chooseOne(this)' id='scissors-btn' type="button" class="fa fa-hand-scissors-o" aria-hidden="true" value="scissors" disabled="true"></button>
         </div>
         <div class="score">
           <div class="wins">
@@ -56,5 +57,6 @@
     <script src="js/counter.js" charset="utf-8"></script>
     <script src="js/app.js" charset="utf-8"></script>
     <script src="js/playEngine.js" charset="utf-8"></script>
+    <script src="js/gameCtrl.js" charset="utf-8"></script>
   </body>
 </html>

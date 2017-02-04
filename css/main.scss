@@ -47,7 +47,12 @@ section{
 }
 
 .input-group{
-  margin: $vertical-space;
+  height: 72px;
+  h2{
+    color: #f15151;
+    font-family: sans-serif;
+    padding-top: 7px;
+  }
   span {
     color: white;
     font-size: 25px;
@@ -78,7 +83,7 @@ section{
 
 .time-control{
   margin: 6vh 0 0 0;
-  height: 91px;
+  height: 60px;
   h2{
     color: white;
     display: inline-block;
@@ -114,6 +119,7 @@ section{
     background-image: -ms-linear-gradient(top, #ff9fae, #42000a);
     background-image: -o-linear-gradient(top, #ff9fae, #42000a);
     background-image: linear-gradient(to bottom, #ff9fae, #42000a);
+    cursor: not-allowed;
     &:hover{
       background: #942132;
     }
@@ -166,6 +172,7 @@ section{
       font-size: 40px;
       padding: 14px;
       background: white;
+      cursor: not-allowed;
       &:hover{
         background: lightgray;
       }

@@ -3,6 +3,7 @@
 let secs;
 let mins;
 let currentMinutes;
+let tickTimeout;
 
 // set default values to the parameters minutes = 0 and seconds = 60
 function countdown(minutes, seconds = 60) {
@@ -25,7 +26,7 @@ function countdown(minutes, seconds = 60) {
 
       if( secs > 0 ) {
         // call tick after 1 second if secs > 0
-          setTimeout( tick, 1000 );
+          tickTimeout = setTimeout( tick, 1000 );
       }
       else {
           if( mins >= 1 ){

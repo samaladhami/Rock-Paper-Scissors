@@ -81,7 +81,11 @@ section {
   border-top: none; }
 
 .input-group {
-  margin: 5vh 0; }
+  height: 72px; }
+  .input-group h2 {
+    color: #f15151;
+    font-family: sans-serif;
+    padding-top: 7px; }
   .input-group span {
     color: white;
     font-size: 25px; }
@@ -107,7 +111,7 @@ section {
 
 .time-control {
   margin: 6vh 0 0 0;
-  height: 91px; }
+  height: 60px; }
   .time-control h2 {
     color: white;
     display: inline-block;
@@ -135,7 +139,8 @@ section {
     background-image: -moz-linear-gradient(top, #ff9fae, #42000a);
     background-image: -ms-linear-gradient(top, #ff9fae, #42000a);
     background-image: -o-linear-gradient(top, #ff9fae, #42000a);
-    background-image: linear-gradient(to bottom, #ff9fae, #42000a); }
+    background-image: linear-gradient(to bottom, #ff9fae, #42000a);
+    cursor: not-allowed; }
     .time-control .restart:hover {
       background: #942132; }
     .time-control .restart:active {
@@ -175,7 +180,8 @@ section {
     .dashboard .btn-group button {
       font-size: 40px;
       padding: 14px;
-      background: white; }
+      background: white;
+      cursor: not-allowed; }
       .dashboard .btn-group button:hover {
         background: lightgray; }
       .dashboard .btn-group button:active {
