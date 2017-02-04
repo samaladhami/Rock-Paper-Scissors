@@ -1,35 +1,68 @@
+'use strict'
+let chooseOne;
+let wins   = 0;
+let losses = 0;
+let draws  = 0;
+
 $(document).ready(function(){
   let userChoice;
   let botChoice;
-  let userTurn = true;
-  const playArray = [ 'rock' , 'paper' , 'scissors' ]
+  const botChoiceArray = [ 'rock' , 'paper' , 'scissors' ];
 
-  $('#rock-btn').click( () => {
-    userTurn = false;
-    userChoice = 'rock';
-    $('#user').empty();
-    $('#user').append('<img src="imgs/rock.png" alt="rock" />')
-  })
-  $('#paper-btn').click( () => {
-    userTurn = false;
-    userChoice = 'paper';
-    $('#user').empty();
-    $('#user').append('<img src="imgs/paper.png" alt="paper" />')
-  })
-  $('#scissors-btn').click( () => {
-    userTurn = false;
-    userChoice = 'scissors';
-    $('#user').empty();
-    $('#user').append('<img src="imgs/scissors.png" alt="scissors" />')
-  });
+  chooseOne = function(obj){
+      userChoice = obj.value;
+      $('#user').empty();
+      $('#user').append(`<img src="imgs/${ obj.value }.png" alt="rock" />`);
 
-  setInterval( ( ) => {
-    if(!userTurn) {
-      botChoice = playArray[ Math.floor( Math.random( ) * playArray.length ) ];
+      botTurn();
+      score();
+  }
+
+  function botTurn(){
+      botChoice = botChoiceArray[ Math.floor( Math.random( ) * botChoiceArray.length ) ];
       $('#bot').empty();
       $('#bot').append(`<img src="imgs/${ botChoice }.png" alt="rock" />`);
-      userTurn = true;
+  }
+
+  function score(){
+    if(userChoice === botChoice) {
+      draws++;
+      $('.draws > h2').text( draws )
     }
-  } , 0)
+
+    else if( userChoice === 'rock' ) {
+      if ( botChoice === 'scissors' ) {
+        wins++
+        $( '.wins > h2' ).text( wins )
+      }
+      else {
+        losses++
+        $( '.losses > h2' ).text( losses )
+      }
+    }
+
+    else if( userChoice === 'paper' ) {
+      if ( botChoice === 'rock' ) {
+        wins++
+        $( '.wins > h2' ).text( wins )
+      }
+      else {
+        losses++
+        $( '.losses > h2' ).text( losses )
+      }
+    }
+
+    else if( userChoice === 'scissors' ) {
+      if ( botChoice === 'paper' ) {
+        wins++
+        $( '.wins > h2' ).text( wins )
+      }
+      else {
+        losses++
+        $( '.losses > h2' ).text( losses )
+      }
+    }
+
+  }
 
 })

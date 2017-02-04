@@ -1,3 +1,4 @@
+'use strict'
 // the variables out of countdown function so I can have access them it on app.js
 let secs;
 let mins;

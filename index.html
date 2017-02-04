@@ -22,7 +22,7 @@
       <div class="time-control">
         <h2 id="counter">00:00</h2>
         <button class="start" id='start-btn' type="button" name="button">Start</button>
-        <button  class="restart" id='restart-btn' type="button" name="button">Restart</button>
+        <button class="restart" id='restart-btn' type="button" name="button">Restart</button>
       </div>
       <div class="show-chosen">
         <div id="user">
@@ -34,9 +34,9 @@
       </div>
       <div class="dashboard">
         <div class="btn-group">
-          <button id='rock-btn' type="button" name="button" class="fa fa-hand-rock-o" aria-hidden="true"></button>
-          <button id='paper-btn' type="button" name="button" class="fa fa-hand-paper-o" aria-hidden="true"></button>
-          <button id='scissors-btn' type="button" name="button" class="fa fa-hand-scissors-o" aria-hidden="true"></button>
+          <button onclick='chooseOne(this)' id='rock-btn' type="button" class="fa fa-hand-rock-o" aria-hidden="true" value="rock"></button>
+          <button onclick='chooseOne(this)' id='paper-btn' type="button" class="fa fa-hand-paper-o" aria-hidden="true" value="paper"></button>
+          <button onclick='chooseOne(this)' id='scissors-btn' type="button" class="fa fa-hand-scissors-o" aria-hidden="true" value="scissors"></button>
         </div>
         <div class="score">
           <div class="wins">

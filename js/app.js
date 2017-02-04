@@ -1,5 +1,5 @@
+'use strict'
 $(document).ready(function(){
-  'use strict'
   // the inupt value
   let startTime;
   let timeArray;
