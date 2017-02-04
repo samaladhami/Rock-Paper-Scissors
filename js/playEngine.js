@@ -27,17 +27,17 @@ $(document).ready(function(){
   function score(){
     if(userChoice === botChoice) {
       draws++;
-      $('.draws > h2').text( draws )
+      $( '.draws > h2' ).text( draws );
     }
 
     else if( userChoice === 'rock' ) {
       if ( botChoice === 'scissors' ) {
         wins++
-        $( '.wins > h2' ).text( wins )
+        $( '.wins > h2' ).text( wins );
       }
       else {
         losses++
-        $( '.losses > h2' ).text( losses )
+        $( '.losses > h2' ).text( losses );
       }
     }
 
