@@ -11,7 +11,7 @@ $( document ).ready(function(){
   gameOver = () => {   // stop the game and show the score
     $('button').prop( 'disabled' , true ); // disable all buttons
     getResult();
-    $( '#game-over' ).html( // wins, losses and draws from playEngine.js and roundTime from app.js
+    $( '#game-over' ).html( // wins, losses and draws from gameEngine.js and roundTime from game.js
       `<div><h2>Round:${ round }</h2></div>
       <h1 style='color: ${ resultTextColor }'>${ resultText }</h1>
       <h2 id='you-win'>Wins: ${ wins }</h2>

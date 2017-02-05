@@ -197,7 +197,7 @@ section {
 .game-over-wrapper {
   position: fixed;
   left: 50%;
-  top: 29%; }
+  top: 21%; }
   .game-over-wrapper > div {
     padding: 0;
     margin: 0;
@@ -237,7 +237,8 @@ section {
   .header-text, header h1, .show-chosen div h2, .game-over-wrapper > div h1 {
     font-size: 39px; }
   .input-group {
-    height: 48px; }
+    height: 48px;
+    padding-top: 12px; }
     .input-group .my-input {
       height: 44px; }
   .show-chosen > div {

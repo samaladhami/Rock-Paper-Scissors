@@ -1,5 +1,5 @@
 'use strict'
-// the variables out of countdown function so I can have access them it on app.js
+// the variables out of countdown function so I can have access them it on game.js
 let secs;
 let mins;
 let currentMinutes;
@@ -21,8 +21,8 @@ function countdown(minutes, seconds = 60) { // set default values to the paramet
       // update the counter
       counter.innerHTML = `${ (currentMinutes < 10 ? '0' + currentMinutes : currentMinutes) }:${ (secs < 10 ? '0' + secs : secs) }`
       if (secs === 0 && currentMinutes === 0) { // game over
-        clearInterval( countingThemeInterval ) // remove the counting theme interval (countingThemeInterval from app.js)
-        counter.removeAttribute( 'style' ); // reset the counter color and font-size (from app.js => countingThemeInterval)
+        clearInterval( countingThemeInterval ) // clear the counting theme interval (countingThemeInterval from game.js)
+        counter.removeAttribute( 'style' ); // reset the counter color and font-size (added from game.js => countingThemeInterval)
         gameOver(); // from gameOver.js to stop the game and show the score
         return; //exit the function
       }

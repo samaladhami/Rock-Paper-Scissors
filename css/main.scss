@@ -187,7 +187,7 @@ section{
 .game-over-wrapper{
   position: fixed;
   left: 50%; // to center absolute element?
-  top: 29%;
+  top: 21%;
   >div{
     @extend .time-control;
     padding: 0;
@@ -240,6 +240,7 @@ section{
   }
   .input-group{
     height: 48px;
+    padding-top: 12px;
     .my-input{
       height: 44px;
     }
