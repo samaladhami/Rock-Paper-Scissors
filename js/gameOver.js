@@ -1,65 +1,65 @@
 'use strict';
-let gameOver;
-let playAgain;
+let gameOver
+  , playAgain;
 //
 $( document ).ready(function(){
-  let result;
-  let resultText;
-  let resultTextColor;
-  let round = 1
-
+  let result // Will be assigned to an ID
+    , resultText // The result header text
+    , resultTextColor
+    , round = 1; // First round
+    //
   gameOver = () => {   // stop the game and show the score
     $('button').prop( 'disabled' , true ); // disable all buttons
-    getResult();
+    getResult(); // line 28
+    $( '.game-over-wrapper' ).css('z-index' , '2');
     $( '#game-over' ).html( // wins, losses and draws from gameEngine.js and roundTime from game.js
       `<div><h2>Round:${ round }</h2></div>
       <h1 style='color: ${ resultTextColor }'>${ resultText }</h1>
-      <h2 id='you-win'>Wins: ${ wins }</h2>
-      <h2 id='you-losse'>Losses: ${ losses }</h2>
-      <h2 id='you-draw'>Draws: ${ draws }</h2>
+      <h2 id='your-wins'>Wins: ${ wins }</h2>
+      <h2 id='your-losses'>Losses: ${ losses }</h2>
+      <h2 id='your-draws'>Draws: ${ draws }</h2>
       <h2>Round time: ${ roundTime }</h2>
       <button type = "button" onclick = "playAgain()">Play again</button>
       `
     );
-
-    $( result ).css('color' , resultTextColor )
+    $( result ).css('color' , resultTextColor ); //highlights your-wins, your-losses or your-draws on the result message
   }
-
+  //
   function getResult(){
     if( wins > losses ){
       resultText = 'You win!!';
       resultTextColor = '#77d673';
-      result = '#you-win'
+      result = '#your-wins';
     }
     else if( wins === losses && wins || draws && !wins && !losses ){
       resultText = 'Draw!';
       resultTextColor = '#dace6e';
-      result = '#you-draw'
+      result = '#your-draws';
     }
     else if( !wins && !losses & !draws ){
       resultText = 'You didn\'t play';
       resultTextColor = '#a9a9a9';
       wins = losses = draws = 'no score';
-      result = null
+      result = null;
     }
     else {
       resultText = 'You lose!';
       resultTextColor = '#de5858';
-      result = '#you-losse'
+      result = '#your-losses';
     }
   }
    playAgain = () => {
       $( '#game-over' ).empty();
+      $( '.game-over-wrapper' ).removeAttr( 'style' ); // remove added property "z-index: 2" (line 14)
       wins = losses = draws = 0; //reinitialize all scores to zero
       $( '.score  h2' ).text( 0 ); // all "h2" that are descendants of ".score"
-      $( '#min , #sec' ).val( '' );
+      $( '#min , #sec' ).val( '' ); //empty the input fields
       validInput = false;
+      minutes = seconds = null;
       round++
-      $( '#start-btn , #min , #sec' ).removeAttr( 'disabled style' );
+      $( '#start-btn , #min , #sec' ).removeAttr( 'disabled style' ); //default mode
       $( '.show-chosen > div' ).empty();
       $( '#user' ).html('<h2>Round</h2>');
       $( '#bot' ).html(`<h2>${ round }</h2>`);
-
   }
-
 })

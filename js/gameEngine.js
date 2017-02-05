@@ -18,7 +18,7 @@ $(document).ready(function(){
   }
   //
   function botTurn(){
-      botChose = botChoseArray[ Math.floor( Math.random( ) * botChoseArray.length ) ]; //the bot choose randomly from botChoseArray
+      botChose = botChoseArray[ Math.floor( Math.random( ) * botChoseArray.length ) ];// assign botChose to a random element from botChoseArray
       $('#bot').empty(); // removes all #bot children
       $('#bot').append(`<img src="imgs/${ botChose }.png" alt="rock" />`); //adds a new image
   }
@@ -26,7 +26,7 @@ $(document).ready(function(){
   function score(){
     if(userChose === botChose) { // if Draw
         draws++; //increments draws variable
-        $( '.draws > h2' ).text( draws ); // updates draws
+        $( '.draws > h2' ).text( draws ); // updates draws block
       }
     else if(                                                        //
              userChose === 'rock' && botChose === 'scissors'       // //
@@ -34,11 +34,11 @@ $(document).ready(function(){
           || userChose === 'paper' && botChose === 'rock'         // //
         ){                                                        //
           wins++ // increments wins variable
-          $( '.wins > h2' ).text( wins ); //updates wins
+          $( '.wins > h2' ).text( wins ); //updates wins block
          }
     else {
         losses++ // increments losses variable
-        $( '.losses > h2' ).text( losses ); // updates losses
+        $( '.losses > h2' ).text( losses ); // updates losses block
     }
   }
 })

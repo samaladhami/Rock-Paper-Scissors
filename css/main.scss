@@ -5,7 +5,7 @@
 //
 $skyColor: #73bef0, white;
 $orange: #ffaa79;
-$greenBtn: #95ff8f, #1a881a;
+$greenBtn: #95ff8f, #1a881a; 
 $redBtn: #ff9fae, #42000a;
 *:focus {
   outline: none;
@@ -43,6 +43,10 @@ section{
 }
 .input-group{
   height: 72px;
+  label{
+    display: block;
+    color: white
+  }
   h2{
     color: #f15151;
     font-family: sans-serif;
@@ -75,7 +79,7 @@ section{
   margin-top: 10px;
 }
 .time-control{
-  margin: 2vh 0 0 0;
+  margin-top: 5vh;
   height: 60px;
   h2{
     color: white;
@@ -123,7 +127,7 @@ section{
 .show-chosen{
   display: flex;
   justify-content: space-around;
-  margin-top: 5vh;
+  margin-top: 7vh;
   div{
     background: white;
     border-radius: 10px;
@@ -188,6 +192,7 @@ section{
   position: fixed;
   left: 50%; // to center absolute element?
   top: 21%;
+  z-index: -1;
   >div{
     @extend .time-control;
     padding: 0;
@@ -195,7 +200,7 @@ section{
     height: auto;
     position: relative;;
     left: -50%;  //to center game-over-wrapper contents
-    width: 320px;
+    width: 423px;
     background: rgba(37, 37, 37, 0.48);
     border-radius: 10px;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.48);
@@ -239,7 +244,6 @@ section{
     font-size: 39px;
   }
   .input-group{
-    height: 48px;
     padding-top: 12px;
     .my-input{
       height: 44px;
@@ -284,5 +288,9 @@ section{
      display: block;
    }
   }
-
+  .game-over-wrapper{
+    >div{
+      width: 306px;
+    }
+  }
 }
