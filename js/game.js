@@ -14,9 +14,8 @@ $(document).ready(function(){
   // start counting
   $( '#start-btn' ).click( ( ) => {
     // check the input value
-    (function(){
+    (function(){ //Self Invoking Function
       if (!minutes && !seconds || seconds === 0 && minutes === 0 ) {
-        console.log(minutes , seconds);
         $('#min , #sec').css( 'border', '1px solid red');
         $('.input-group > h2').text('invalid input')
       }
@@ -49,6 +48,5 @@ $(document).ready(function(){
         }
       } , 10)
     }
-  } )
-
+  })
 })

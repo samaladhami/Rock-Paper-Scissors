@@ -1,44 +1,44 @@
 'use strict'
-let chooseOne;
-let wins   = 0;
-let losses = 0;
-let draws  = 0;
+let chooseOne; // see line 12
+let wins   = 0;//
+let losses = 0;//// all scores start with 0
+let draws  = 0;//
 //
 $(document).ready(function(){
-  let userChoice;
-  let botChoice;
-  const botChoiceArray = [ 'rock' , 'paper' , 'scissors' ];
+  let userChose; // see lines 13, 27, 32, 33 and 34
+  let botChose;  // see lines 21, 23, 27, 32, 33 and 34
+  const botChoseArray = [ 'rock' , 'paper' , 'scissors' ]; //the bot choose randomly from this array
 //
-  chooseOne = function(obj){
-      userChoice = obj.value;
-      $('#user').empty();
-      $('#user').append(`<img src="imgs/${ obj.value }.png" alt="rock" />`);
-      botTurn();
-      score();
+  chooseOne = function(obj){ // a function that takes in an object (which is gonna be "this keyword" ) and I added 'onclick = "chooseOne( this )"' to rock-btn, paper-btn and scissors-btn.
+      userChose = obj.value; // assign userChose to the value attribute value on the clicked button (see index.htm lines 38, 39 and 40 )
+      $('#user').empty(); // removes all #user children
+      $('#user').append(`<img src="imgs/${ obj.value }.png" alt="rock" />`); //adds a new image
+      botTurn(); // line 20
+      score(); // line 26
   }
   //
   function botTurn(){
-      botChoice = botChoiceArray[ Math.floor( Math.random( ) * botChoiceArray.length ) ];
-      $('#bot').empty();
-      $('#bot').append(`<img src="imgs/${ botChoice }.png" alt="rock" />`);
+      botChose = botChoseArray[ Math.floor( Math.random( ) * botChoseArray.length ) ]; //the bot choose randomly from botChoseArray
+      $('#bot').empty(); // removes all #bot children
+      $('#bot').append(`<img src="imgs/${ botChose }.png" alt="rock" />`); //adds a new image
   }
   //
   function score(){
-    if(userChoice === botChoice) {
-        draws++;
-        $( '.draws > h2' ).text( draws );
+    if(userChose === botChose) { // if Draw
+        draws++; //increments draws variable
+        $( '.draws > h2' ).text( draws ); // updates draws
       }
     else if(                                                        //
-             userChoice === 'rock' && botChoice === 'scissors'       // //
-          || userChoice === 'scissors' && botChoice === 'paper'///////////// if win
-          || userChoice === 'paper' && botChoice === 'rock'         // //
+             userChose === 'rock' && botChose === 'scissors'       // //
+          || userChose === 'scissors' && botChose === 'paper'///////////// if the user wins
+          || userChose === 'paper' && botChose === 'rock'         // //
         ){                                                        //
-          wins++
-          $( '.wins > h2' ).text( wins );
+          wins++ // increments wins variable
+          $( '.wins > h2' ).text( wins ); //updates wins
          }
     else {
-        losses++
-        $( '.losses > h2' ).text( losses );
+        losses++ // increments losses variable
+        $( '.losses > h2' ).text( losses ); // updates losses
     }
   }
 })

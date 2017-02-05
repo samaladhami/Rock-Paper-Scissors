@@ -1,10 +1,9 @@
 'use strict';
 $( document ).ready(function(){
-  $( '#min , #sec' ).click( ( ) => {   // reset the input border color
-    $( '#min , #sec' ).removeAttr( 'style' );
-    $( '.input-group > h2' ).text( '' );
+  $( '#min , #sec' ).click( ( ) => {
+    $( '#min , #sec' ).removeAttr( 'style' ); // reset the input border color
+    $( '.input-group > h2' ).text( '' );  // deletes the warning text
   });
-
   $( '#start-btn' ).click( function() { // when start is clicked
     if (validInput) {
       $( '#start-btn , #min , #sec' ).prop( 'disabled' , true ) // disable start button and the input
@@ -16,7 +15,6 @@ $( document ).ready(function(){
         wins = losses = draws = 0;   // from gameEngine.js reinitialize all scores to zero
         $( '.score  h2' ).text( 0 ); // all "h2" that are descendants of ".score"
         countdown(minutes , seconds);//start over (countdown from counter.js)
-
       })
     }
   })
