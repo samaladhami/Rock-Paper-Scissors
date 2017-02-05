@@ -3,30 +3,29 @@ let validInput;
 let minutes;
 let seconds;
 let countingThemeInterval;
+let roundTime; // the inupt value
 $(document).ready(function(){
-  let startTime;   // the inupt value
   let timeArray;
   // update the inupt value
-  $( '#min, #sec' ).keyup( ( ) => {
-    startTime = `${ $( '#min' ).val( ) }:${ $( '#sec' ).val( ) }`
-    timeArray = startTime.split(':');
+  $( '#min, #sec' ).on('keyup click' , ( ) => {
+    minutes = Number( $( '#min' ).val() );
+    seconds = Number( $( '#sec' ).val() )
   })
   // start counting
   $( '#start-btn' ).click( ( ) => {
     // check the input value
     (function(){
-      const min = $('#min').val();
-      const sec = $('#sec').val();
-      if (!min && !sec ) {
+      if (!minutes && !seconds || seconds === 0 && minutes === 0 ) {
+        console.log(minutes , seconds);
         $('#min , #sec').css( 'border', '1px solid red');
-        $('.input-group > h2').text('please input a number')
+        $('.input-group > h2').text('invalid input')
       }
-      else if( Number( min ) === 0 && sec <= 2 ) {
+      else if( minutes === 0 && seconds <= 2 ) {
         $('#min , #sec').css( 'border', '1px solid red');
         $('.input-group > h2').text('the minimum time is 00:03');
       }
-      else if( sec  > 60 ) {
-        $('#min , #sec').css( 'border', '1px solid red');
+      else if( seconds  > 60 ) {
+        $('#sec').css( 'border', '1px solid red');
         $('.input-group > h2').text('The seconds must be less than 60');
       }
       else {
@@ -35,8 +34,7 @@ $(document).ready(function(){
     }())
     //
     if(validInput){
-      minutes = Number( timeArray[0] );
-      seconds = Number( timeArray[1] );
+      roundTime = `${ ( minutes < 10 ? '0' + minutes : minutes)  }:${ ( seconds < 10 ? '0' + seconds : seconds ) }`;
       $( '#counter' ).animate({ // change the font-size
         'font-size' : '50px'
       })
@@ -44,10 +42,10 @@ $(document).ready(function(){
       // once the user clicks on #start-btn it constantly checks the counter value and changes the #counter color
       countingThemeInterval = setInterval( ( ) => {
         if(currentMinutes === 0 && secs <= 10 ) {
-          $( '#counter' ).css( 'color' , 'red' );   // alert ther user when the counter < 10
+          $( '#counter' ).css( 'color' , 'red' );   // Warns ther user when the counter < 10 seconds
         }
         else if( secs > 10  || currentMinutes > 0){
-          $( '#counter' ).css( 'color' , '#93f97c' ); // green color when the counter > 10
+          $( '#counter' ).css( 'color' , '#93f97c' ); // green color when the counter > 10 seconds
         }
       } , 10)
     }

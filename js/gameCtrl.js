@@ -13,7 +13,7 @@ $( document ).ready(function(){
                                                                 .css( 'cursor' , 'default' );
       $('#restart-btn').click( () => { //when restart is clicked
         clearTimeout( tickTimeout ); // stop counter.js from calling tick function
-        wins = losses = draws = 0;   // from playEngine.js
+        wins = losses = draws = 0;   // from playEngine.js reinitialize all scores to zero
         $( '.score  h2' ).text( 0 ); // all "h2" that are descendants of ".score"
         countdown(minutes , seconds);//start over (countdown from counter.js)
 
