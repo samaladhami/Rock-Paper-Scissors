@@ -5,7 +5,7 @@
 //
 $skyColor: #73bef0, white;
 $orange: #ffaa79;
-$greenBtn: #95ff8f, #1a881a; 
+$greenBtn: #95ff8f, #1a881a;
 $redBtn: #ff9fae, #42000a;
 *:focus {
   outline: none;
@@ -142,7 +142,7 @@ section{
       text-shadow: 1px -1px white, 3px 1px 2px black, 0px -1px 1px black;
     }
   }
-  #user > img{
+  .flip-image > img{
     //to flip user img cross browsers
     -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
@@ -232,6 +232,7 @@ section{
     }
   }
 }
+//==================================//
 @media ( max-width: 768px ) {
   section{
     width: 100%;
@@ -239,6 +240,7 @@ section{
     padding: 0;
   }
 }
+//==================================//
 @media ( max-width: 550px ) {
   .header-text{
     font-size: 39px;
@@ -270,6 +272,7 @@ section{
     }
   }
 }
+//====================================//
 @media ( max-width: 435px ) {
   .header-text{
     font-size: 30px;

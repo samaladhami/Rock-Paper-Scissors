@@ -4,11 +4,11 @@ let secs;
 let mins;
 let currentMinutes;
 let tickTimeout;
-//
+//====================================//
 function countdown(minutes, seconds = 60) { // set default values to the parameters minutes = 0 and seconds = 60
   secs = seconds;
   mins = minutes
-  //
+  //================//
   function tick() {
       if (mins >= 0 && secs === 0) {
         currentMinutes = mins-1;   // subtract 1 from the minutes

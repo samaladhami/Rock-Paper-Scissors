@@ -1,13 +1,13 @@
 'use strict';
 let gameOver
   , playAgain;
-//
+//=======================================//
 $( document ).ready(function(){
   let result // Will be assigned to an ID
     , resultText // The result header text
     , resultTextColor
     , round = 1; // First round
-    //
+  //==========================//
   gameOver = () => {   // stop the game and show the score
     $('button').prop( 'disabled' , true ); // disable all buttons
     getResult(); // line 28
@@ -24,7 +24,7 @@ $( document ).ready(function(){
     );
     $( result ).css('color' , resultTextColor ); //highlights your-wins, your-losses or your-draws on the result message
   }
-  //
+  //====================//
   function getResult(){
     if( wins > losses ){
       resultText = 'You win!!';

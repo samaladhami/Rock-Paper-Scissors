@@ -1,19 +1,19 @@
 'use strict';
 let validInput
-  , minutes // will assign to a number from M input field
+  , minutes //will assign to a number from M input field
   , seconds // will assign to a number from S input field
-  , countingThemeInterval //see line 42
+  , countingThemeInterval // see line 42
   , roundTime; // the inupt value
   //
 $(document).ready(function(){
-  // update the inupt value
+  //======= update the inupt value =======//
   $( '#min, #sec' ).on('keyup click' , ( ) => {
     minutes = Number( $( '#min' ).val() );
     seconds = Number( $( '#sec' ).val() )
   })
-  // start counting
+  //====== start counting =======//
   $( '#start-btn' ).click( ( ) => {
-    //Self invoking function which validates the input value
+    //=====Self invoking function which validates the input value =====//
     (function(){
       if (!minutes && !seconds || seconds === 0 && minutes === 0 ) { //If the input is "" or 0 on both fields
         $('#min , #sec').css( 'border', '1px solid red');
@@ -31,7 +31,7 @@ $(document).ready(function(){
         validInput = true;
       }
     }())
-    //
+    //==============================//
     if( validInput ){
       roundTime = `${ ( minutes < 10 ? '0' + minutes : minutes)  }:${ ( seconds < 10 ? '0' + seconds : seconds ) }`;
       $( '#counter' ).animate({ // changes the font-size from 33px to 50px
