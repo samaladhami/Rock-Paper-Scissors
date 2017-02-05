@@ -78,7 +78,8 @@ section {
   margin: auto;
   border: 1px solid white;
   padding: 10px;
-  border-top: none; }
+  border-top: none;
+  border-bottom: none; }
 
 .input-group {
   height: 72px; }
@@ -107,10 +108,11 @@ section {
   font-size: 18px;
   padding: 10px 20px 10px 20px;
   margin-left: 3vw;
-  border: none; }
+  border: none;
+  margin-top: 10px; }
 
 .time-control, .game-over-wrapper > div {
-  margin: 6vh 0 0 0;
+  margin: 2vh 0 0 0;
   height: 60px; }
   .time-control h2, .game-over-wrapper > div h2 {
     color: white;
@@ -149,7 +151,7 @@ section {
 .show-chosen {
   display: flex;
   justify-content: space-around;
-  margin: 5vh 0; }
+  margin-top: 5vh; }
   .show-chosen div {
     background: white;
     border-radius: 10px;
@@ -189,7 +191,9 @@ section {
     .dashboard .score div {
       display: inline-block;
       background: dimgray;
-      border: 1px solid #4a4a4a; }
+      border: 1px solid #4a4a4a;
+      width: 69px;
+      padding: 10px 0; }
 
 .game-over-wrapper {
   position: fixed;
@@ -221,3 +225,35 @@ section {
         background: dimgray; }
       .game-over-wrapper > div button:active {
         background: black; }
+
+@media (max-width: 768px) {
+  section {
+    width: 100%;
+    border: none;
+    padding: 0; } }
+
+@media (max-width: 550px) {
+  .header-text, header h1, .show-chosen div h2, .game-over-wrapper > div h1 {
+    font-size: 39px; }
+  .input-group {
+    height: 48px; }
+    .input-group .my-input {
+      height: 44px; }
+  .dashboard .btn-group button {
+    padding: 8px; }
+  .dashboard .score div {
+    padding: 5px 0;
+    width: 58px; } }
+
+@media (max-width: 435px) {
+  .header-text, header h1, .show-chosen div h2, .game-over-wrapper > div h1 {
+    font-size: 30px; }
+  .show-chosen div {
+    width: 132px;
+    height: 89px;
+    padding-top: 22px;
+    margin-top: 7vh; }
+  .time-control, .game-over-wrapper > div {
+    margin: 0; }
+    .time-control h2, .game-over-wrapper > div h2 {
+      display: block; } }

@@ -38,6 +38,7 @@ section{
   border: 1px solid white;
   padding: 10px;
   border-top: none;
+  border-bottom: none;
 }
 .input-group{
   height: 72px;
@@ -70,9 +71,10 @@ section{
   padding: 10px 20px 10px 20px;
   margin-left: 3vw;
   border: none;
+  margin-top: 10px;
 }
 .time-control{
-  margin: 6vh 0 0 0;
+  margin: 2vh 0 0 0;
   height: 60px;
   h2{
     color: white;
@@ -120,7 +122,7 @@ section{
 .show-chosen{
   display: flex;
   justify-content: space-around;
-  margin: $vertical-space;
+  margin-top: 5vh;
   div{
     background: white;
     border-radius: 10px;
@@ -173,6 +175,8 @@ section{
       display: inline-block;
       background: dimgray;
       border: 1px solid #4a4a4a;
+      width: 69px;
+      padding: 10px 0;
       h2{
 
       }
@@ -218,4 +222,57 @@ section{
       }
     }
   }
+}
+@media ( max-width: 768px ) {
+  section{
+    width: 100%;
+    border: none;
+    padding: 0;
+  }
+}
+@media ( max-width: 550px ) {
+  .header-text{
+    font-size: 39px;
+  }
+  .input-group{
+    height: 48px;
+    .my-input{
+      height: 44px;
+    }
+  }
+  .dashboard{
+    .btn-group{
+      button{
+        padding: 8px;
+      }
+    }
+    .score{
+      div{
+        padding: 5px 0;
+        width: 58px;
+      }
+    }
+  }
+
+}
+@media ( max-width: 435px ) {
+  .header-text{
+    font-size: 30px;
+  }
+  .show-chosen{
+    div{
+      width: 132px;
+      height: 89px;
+      padding-top: 22px;
+      margin-top: 7vh;
+    }
+  }
+  .time-control {
+    margin: 0;
+
+    h2{
+     display: block;
+   }
+  }
+
 }
