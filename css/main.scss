@@ -244,16 +244,23 @@ section{
       height: 44px;
     }
   }
+  .show-chosen {
+    >div{
+      width: 164px;
+      padding-top: 20px;
+      height: 102px;
+    }
+  }
   .dashboard{
     .btn-group{
       button{
         padding: 8px;
       }
-    }
     .score{
       div{
         padding: 5px 0;
         width: 58px;
+        }
       }
     }
   }
@@ -276,4 +283,5 @@ section{
      display: block;
    }
   }
+
 }

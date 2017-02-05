@@ -240,9 +240,13 @@ section {
     height: 48px; }
     .input-group .my-input {
       height: 44px; }
+  .show-chosen > div {
+    width: 164px;
+    padding-top: 20px;
+    height: 102px; }
   .dashboard .btn-group button {
     padding: 8px; }
-  .dashboard .score div {
+  .dashboard .btn-group .score div {
     padding: 5px 0;
     width: 58px; } }
 
