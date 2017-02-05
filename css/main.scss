@@ -6,12 +6,10 @@
 $sky-color: #73bef0;
 $orange: #ff9f66;
 $vertical-space: 5vh 0;
-
 *:focus {
   outline: none;
   box-sizing: border-box;
 }
-
 body{
   background: #73bef0;
   // cross browsers
@@ -41,7 +39,6 @@ section{
   padding: 10px;
   border-top: none;
 }
-
 .input-group{
   height: 72px;
   h2{
@@ -64,7 +61,6 @@ section{
     text-align: center;
   }
 }
-
 .my-block{
   box-shadow: 1px 1px 2px black, 3px 2px white;
   -webkit-border-radius: 10;
@@ -75,7 +71,6 @@ section{
   margin-left: 3vw;
   border: none;
 }
-
 .time-control{
   margin: 6vh 0 0 0;
   height: 60px;
@@ -122,7 +117,6 @@ section{
     }
   }
 }
-
 .show-chosen{
   display: flex;
   justify-content: space-around;
@@ -152,7 +146,6 @@ section{
     height: 100%
   }
 }
-
 .dashboard{
   margin: $vertical-space;
   display: flex;
@@ -186,37 +179,43 @@ section{
     }
   }
 }
-#gameOver{
-  @extend .time-control;
-  padding: 0;
-  margin: 0;
-  height: auto;
-  position: absolute;
+.game-over-wrapper{
+  position: fixed;
+  left: 50%; // to center absolute element?
   top: 29%;
-  left: 33%;
-  width: 320px;
-  background: rgba(58, 58, 58, 0.48);
-  border-radius: 10px;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.48);
   >div{
-    width: 100%;
-    padding-top: 19px;
-    background: rgba(255, 255, 255, 0.57);
-    border-radius: 10px 10px 0 0;;
-  }
-  h1{
-    @extend .header-text;
-  }
-  h2{
-    display: block;
-  }
-  button{
-    margin: 19px 0;
-    &:hover{
-      background: dimgray;
+    @extend .time-control;
+    padding: 0;
+    margin: 0;
+    height: auto;
+    position: relative;;
+    left: -50%;  //to center game-over-wrapper contents
+    width: 320px;
+    background: rgba(58, 58, 58, 0.48);
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.48);
+    >div{
+      width: 100%;
+      padding-top: 19px;
+      background: rgba(255, 255, 255, 0.57);
+      border-radius: 10px 10px 0 0;;
     }
-    &:active{
-      background: black;
+    h1{
+      @extend .header-text;
+      font-size: 42px;
+    }
+    h2{
+      display: block;
+      font-size: 29px;
+    }
+    button{
+      margin: 19px 0;
+      &:hover{
+        background: dimgray;
+      }
+      &:active{
+        background: black;
+      }
     }
   }
 }

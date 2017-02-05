@@ -67,7 +67,7 @@ body {
   height: 100vh;
   text-align: center; }
 
-.header-text, header h1, .show-chosen div h2, #gameOver h1 {
+.header-text, header h1, .show-chosen div h2, .game-over-wrapper > div h1 {
   color: #ff9f66;
   font-size: 50px;
   font-family: 'Coiny', cursive;
@@ -99,7 +99,7 @@ section {
     font-size: 33px;
     text-align: center; }
 
-.my-block, .time-control button, #gameOver button, .dashboard .btn-group button, .dashboard .score div {
+.my-block, .time-control button, .game-over-wrapper > div button, .dashboard .btn-group button, .dashboard .score div {
   box-shadow: 1px 1px 2px black, 3px 2px white;
   -webkit-border-radius: 10;
   -moz-border-radius: 10;
@@ -109,19 +109,19 @@ section {
   margin-left: 3vw;
   border: none; }
 
-.time-control, #gameOver {
+.time-control, .game-over-wrapper > div {
   margin: 6vh 0 0 0;
   height: 60px; }
-  .time-control h2, #gameOver h2 {
+  .time-control h2, .game-over-wrapper > div h2 {
     color: white;
     display: inline-block;
     font-size: 33px;
     font-family: monospace;
     text-shadow: 2px 1px 3px black; }
-  .time-control button, #gameOver button {
+  .time-control button, .game-over-wrapper > div button {
     color: white;
     box-shadow: 1px 1px 2px dimgray; }
-  .time-control .start, #gameOver .start {
+  .time-control .start, .game-over-wrapper > div .start {
     background: #95ff8f;
     background-image: -webkit-linear-gradient(top, #95ff8f, #1a881a);
     background-image: -moz-linear-gradient(top, #95ff8f, #1a881a);
@@ -129,11 +129,11 @@ section {
     background-image: -o-linear-gradient(top, #95ff8f, #1a881a);
     background-image: linear-gradient(to bottom, #95ff8f, #1a881a);
     padding: 10px 29px; }
-    .time-control .start:hover, #gameOver .start:hover {
+    .time-control .start:hover, .game-over-wrapper > div .start:hover {
       background: #24a753; }
-    .time-control .start:active, #gameOver .start:active {
+    .time-control .start:active, .game-over-wrapper > div .start:active {
       background: #1f7d41; }
-  .time-control .restart, #gameOver .restart {
+  .time-control .restart, .game-over-wrapper > div .restart {
     background: #ff9fae;
     background-image: -webkit-linear-gradient(top, #ff9fae, #42000a);
     background-image: -moz-linear-gradient(top, #ff9fae, #42000a);
@@ -141,9 +141,9 @@ section {
     background-image: -o-linear-gradient(top, #ff9fae, #42000a);
     background-image: linear-gradient(to bottom, #ff9fae, #42000a);
     cursor: not-allowed; }
-    .time-control .restart:hover, #gameOver .restart:hover {
+    .time-control .restart:hover, .game-over-wrapper > div .restart:hover {
       background: #942132; }
-    .time-control .restart:active, #gameOver .restart:active {
+    .time-control .restart:active, .game-over-wrapper > div .restart:active {
       background: #540b16; }
 
 .show-chosen {
@@ -191,27 +191,33 @@ section {
       background: dimgray;
       border: 1px solid #4a4a4a; }
 
-#gameOver {
-  padding: 0;
-  margin: 0;
-  height: auto;
-  position: absolute;
-  top: 29%;
-  left: 33%;
-  width: 320px;
-  background: rgba(58, 58, 58, 0.48);
-  border-radius: 10px;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.48); }
-  #gameOver > div {
-    width: 100%;
-    padding-top: 19px;
-    background: rgba(255, 255, 255, 0.57);
-    border-radius: 10px 10px 0 0; }
-  #gameOver h2 {
-    display: block; }
-  #gameOver button {
-    margin: 19px 0; }
-    #gameOver button:hover {
-      background: dimgray; }
-    #gameOver button:active {
-      background: black; }
+.game-over-wrapper {
+  position: fixed;
+  left: 50%;
+  top: 29%; }
+  .game-over-wrapper > div {
+    padding: 0;
+    margin: 0;
+    height: auto;
+    position: relative;
+    left: -50%;
+    width: 320px;
+    background: rgba(58, 58, 58, 0.48);
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.48); }
+    .game-over-wrapper > div > div {
+      width: 100%;
+      padding-top: 19px;
+      background: rgba(255, 255, 255, 0.57);
+      border-radius: 10px 10px 0 0; }
+    .game-over-wrapper > div h1 {
+      font-size: 42px; }
+    .game-over-wrapper > div h2 {
+      display: block;
+      font-size: 29px; }
+    .game-over-wrapper > div button {
+      margin: 19px 0; }
+      .game-over-wrapper > div button:hover {
+        background: dimgray; }
+      .game-over-wrapper > div button:active {
+        background: black; }
