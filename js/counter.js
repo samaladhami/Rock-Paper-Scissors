@@ -1,9 +1,9 @@
 'use strict'
 // the variables out of countdown function so I can have access them it on game.js
-let secs;
-let mins;
-let currentMinutes;
-let tickTimeout;
+let secs
+  , mins
+  , currentMinutes
+  , tickTimeout;
 //====================================//
 function countdown(minutes, seconds = 60) { // set default values to the parameters minutes = 0 and seconds = 60
   secs = seconds;

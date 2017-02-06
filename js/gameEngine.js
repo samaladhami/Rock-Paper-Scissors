@@ -10,10 +10,10 @@ $(document).ready(function(){
   const botChoseArray = [ 'rock' , 'paper' , 'scissors' ]; //the bot choose randomly from this array
 //
   chooseOne = function(obj){ // a function that takes in an object (which is gonna be "this keyword" ) and I added 'onclick = "chooseOne( this )"' to rock-btn, paper-btn and scissors-btn.
-      userChose = obj.value; // assign userChose to the value attribute value on the clicked button (see index.htm lines 38, 39 and 40 )
+      userChose = obj.value; // assign userChose to the value attribute value on the clicked button (see index.htm .dashboard > .play-btn-group > button )
       $user.html(`<img src="imgs/${ userChose }.png" alt="${ userChose }" />`); //adds a new image
-      botTurn(); 
-      score();
+      botTurn();
+      getScore();
   }
   //========================//
   function botTurn(){
@@ -21,7 +21,7 @@ $(document).ready(function(){
       $bot.html(`<img src="imgs/${ botChose }.png" alt="${ botChose }" />`); //adds a new image
   }
   //=========================//
-  function score(){
+  function getScore(){
     if(userChose === botChose) { // if Draw
         draws++; //increments draws variable
         $( '.draws > h2' ).text( draws ); // updates draws block

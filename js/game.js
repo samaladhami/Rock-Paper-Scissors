@@ -2,7 +2,7 @@
 let validInput
   , minutes //will assign to a number from M input field
   , seconds // will assign to a number from S input field
-  , countingThemeInterval // see line 61
+  , countingThemeInterval // see line 65
   , roundTime // the inupt value
   //======= often used selectors ========//
   , $inputGroup_h2
