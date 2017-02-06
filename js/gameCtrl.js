@@ -1,16 +1,17 @@
 'use strict';
 $( document ).ready(function(){
-  $( '#min , #sec' ).click( ( ) => {
-    $( '#min , #sec' ).removeAttr( 'style' ); // reset the input border color
-    $( '.input-group > h2' ).text( '' );  // deletes the warning text
+  const $restartBtn = $('#restart-btn');
+  $minAndSec.click( ( ) => {
+    $minAndSec.removeAttr( 'style' ); // reset the input border color
+    $inputGroup_h2.text( '' );  // deletes the warning text
   });
-  $( '#start-btn' ).click( function() { // when start is clicked
+  $startBtn.click( function() { // when start is clicked
     if (validInput) {
-      $( '#start-btn , #min , #sec' ).prop( 'disabled' , true ) // disable start button and the input
-                                     .css( 'cursor' , 'not-allowed' );
-      $('#rock-btn , #paper-btn , #scissors-btn , #restart-btn').prop( 'disabled' , false )// enable the game buttons
-                                                                .css( 'cursor' , 'default' );
-      $('#restart-btn').click( () => { //when restart is clicked
+      $minAndSec.add( $startBtn ).prop( 'disabled' , true ) // disable start button and the input
+                                               .css( 'cursor' , 'not-allowed' );
+      $( '#rock-btn , #paper-btn , #scissors-btn' ).add( $restartBtn ).prop( 'disabled' , false )// enable the game buttons
+                                                                      .css( 'cursor' , 'default' );
+      $restartBtn.click( () => { //when restart is clicked
         clearTimeout( tickTimeout ); // stop counter.js from calling tick function
         wins = losses = draws = 0;   // from gameEngine.js reinitialize all scores to zero
         $( '.score  h2' ).text( 0 ); // all "h2" that are descendants of ".score"

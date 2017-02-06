@@ -3,6 +3,8 @@ let gameOver
   , playAgain;
 //=======================================//
 $( document ).ready(function(){
+  const $gameOverWrapper = $( '.game-over-wrapper' )
+      , $gameOver        = $( '#game-over' );
   let result // Will be assigned to an ID
     , resultText // The result header text
     , resultTextColor
@@ -11,13 +13,13 @@ $( document ).ready(function(){
   gameOver = () => {   // stop the game and show the score
     $('button').prop( 'disabled' , true ); // disable all buttons
     getResult(); // line 28
-    $( '.game-over-wrapper' ).css('z-index' , '2');
-    $( '#game-over' ).html( // wins, losses and draws from gameEngine.js and roundTime from game.js
+    $gameOverWrapper.css('z-index' , '2');
+    $gameOver.html( // wins, losses and draws from gameEngine.js and roundTime from game.js
       `<div><h2>Round:${ round }</h2></div>
       <h1 style='color: ${ resultTextColor }'>${ resultText }</h1>
-      <h2 id='your-wins'>Wins: ${ wins }</h2>
-      <h2 id='your-losses'>Losses: ${ losses }</h2>
-      <h2 id='your-draws'>Draws: ${ draws }</h2>
+      <h2 id= 'your-wins' >Wins: ${ wins }</h2>
+      <h2 id= 'your-losses' >Losses: ${ losses }</h2>
+      <h2 id= 'your-draws' >Draws: ${ draws }</h2>
       <h2>Round time: ${ roundTime }</h2>
       <button type = "button" onclick = "playAgain()">Play again</button>
       `
@@ -49,17 +51,17 @@ $( document ).ready(function(){
     }
   }
    playAgain = () => {
-      $( '#game-over' ).empty();
-      $( '.game-over-wrapper' ).removeAttr( 'style' ); // remove added property "z-index: 2" (line 14)
+      $gameOver.empty();
+      $gameOverWrapper.removeAttr( 'style' ); // remove added property "z-index: 2" (line 14)
       wins = losses = draws = 0; //reinitialize all scores to zero
       $( '.score  h2' ).text( 0 ); // all "h2" that are descendants of ".score"
-      $( '#min , #sec' ).val( '' ); //empty the input fields
+      $minAndSec.val( '' ); //empty the input fields
       validInput = false;
       minutes = seconds = null;
       round++
-      $( '#start-btn , #min , #sec' ).removeAttr( 'disabled style' ); //default mode
+      $startBtn.add( $minAndSec ).removeAttr( 'disabled style' ); //default mode
       $( '.show-chosen > div' ).empty();
-      $( '#user' ).html('<h2>Round</h2>');
-      $( '#bot' ).html(`<h2>${ round }</h2>`);
+      $user.html('<h2>Round</h2>');
+      $bot.html(`<h2>${ round }</h2>`);
   }
 })
