@@ -60,7 +60,6 @@ $( document ).ready(function(){
       minutes = seconds = null;
       round++
       $startBtn.add( $minAndSec ).removeAttr( 'disabled style' ); //default mode
-      $( '.show-chosen > div' ).empty();
       $user.html('<h2>Round</h2>');
       $bot.html(`<h2>${ round }</h2>`);
   }

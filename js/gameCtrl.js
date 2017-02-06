@@ -8,7 +8,7 @@ $( document ).ready(function(){
   $startBtn.click( function() { // when start is clicked
     if (validInput) {
       $minAndSec.add( $startBtn ).prop( 'disabled' , true ) // disable start button and the input
-                                               .css( 'cursor' , 'not-allowed' );
+                                 .css( 'cursor' , 'not-allowed' );
       $( '#rock-btn , #paper-btn , #scissors-btn' ).add( $restartBtn ).prop( 'disabled' , false )// enable the game buttons
                                                                       .css( 'cursor' , 'default' );
       $restartBtn.click( () => { //when restart is clicked
