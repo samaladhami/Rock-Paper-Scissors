@@ -12,7 +12,7 @@ $(document).ready(function(){
   chooseOne = function(obj){ // a function that takes in an object (which is gonna be "this keyword" ) and I added 'onclick = "chooseOne( this )"' to rock-btn, paper-btn and scissors-btn.
       userChose = obj.value; // assign userChose to the value attribute value on the clicked button (see index.htm lines 38, 39 and 40 )
       $('#user').empty(); // removes all #user children
-      $('#user').append(`<img src="imgs/${ obj.value }.png" alt="rock" />`); //adds a new image
+      $('#user').append(`<img src="imgs/${ obj.value }.png" alt="${ obj.value }" />`); //adds a new image
       botTurn(); // line 20
       score(); // line 26
   }
@@ -31,7 +31,7 @@ $(document).ready(function(){
     else if(
              userChose === 'rock' && botChose === 'scissors'  ////
           || userChose === 'scissors' && botChose === 'paper'////====> if the user wins
-          || userChose === 'paper' && botChose === 'rock'   ////    
+          || userChose === 'paper' && botChose === 'rock'   ////
         ){
           wins++ // increments wins variable
           $( '.wins > h2' ).text( wins ); //updates wins block
