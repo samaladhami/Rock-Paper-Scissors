@@ -2,7 +2,7 @@
 let validInput
   , minutes //will assign to a number from M input field
   , seconds // will assign to a number from S input field
-  , countingThemeInterval // see line 57
+  , countingThemeInterval // see line 61
   , roundTime // the inupt value
   //======= often used selectors ========//
   , $inputGroup_h2
@@ -12,6 +12,7 @@ let validInput
   , $startBtn
   , $user
   , $bot
+  , $playBtnGroup
   , $minAndSec;
   //================
 $(document).ready(function(){
@@ -20,9 +21,11 @@ $(document).ready(function(){
   $min           = $( '#min' );
   $sec           = $( '#sec' );
   $startBtn      = $( '#start-btn' );
-  $user          = $('#user');
-  $bot           = $('#bot');
+  $user          = $( '#user' );
+  $bot           = $( '#bot' );
+  $playBtnGroup  = $( '.play-btn-group button' )
   $minAndSec     = $min.add( $sec );
+
   //======= update the inupt value =======//
   $minAndSec.keyup( () => {
     minutes = Number( $min.val() );
@@ -30,25 +33,28 @@ $(document).ready(function(){
   })
   //===== function which validates the input value =====//
   function validateInput(){
-    if (!minutes && !seconds || seconds === 0 && minutes === 0 ) { //If the input is "" or 0 on both fields
+    if (!minutes && !seconds ) { //If the input is "" or 0 on both fields
       $minAndSec.css( 'border', '1px solid red');
       $inputGroup_h2.text('invalid input');
+      return false;
     }
-    else if( minutes === 0 && seconds <= 2 ) { //If the input is less than 00:03
+    else if( !minutes && seconds <= 2 ) { //If the input is less than 00:03
       $minAndSec.css( 'border', '1px solid red');
       $inputGroup_h2.text('the minimum time is 00:03');
+      return false;
     }
     else if( seconds  > 60 ) {  //If the user input seconds greater than 60s
       $sec.css( 'border', '1px solid red');
       $inputGroup_h2.text('The seconds must be less than 60');
+      return false;
     }
     else {
-      validInput = true;
+      return true;
     }
   };
   //====== start counting =======//
   $startBtn.click( ( ) => {
-    validateInput();
+    validInput = validateInput();
     if( validInput ){
       roundTime = `${ ( minutes < 10 ? '0' + minutes : minutes)  }:${ ( seconds < 10 ? '0' + seconds : seconds ) }`;
       $counter.animate({ // changes the font-size from 33px to 50px

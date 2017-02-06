@@ -11,7 +11,8 @@ $( document ).ready(function(){
     , round = 1; // First round
   //=============================//
   gameOver = () => {   // stop the game and show the score
-    $('button').prop( 'disabled' , true ); // disable all buttons
+    $('button').prop( 'disabled' , true )// disable all buttons
+               .removeAttr( 'style' );
     getResult(); // line 28
     $gameOverWrapper.css('z-index' , '2');
     $gameOver.html( // wins, losses and draws from gameEngine.js and roundTime from game.js
@@ -52,14 +53,14 @@ $( document ).ready(function(){
   }
    playAgain = () => {
       $gameOver.empty();
-      $gameOverWrapper.removeAttr( 'style' ); // remove added property "z-index: 2" (line 14)
+      $gameOverWrapper.add( $minAndSec ).removeAttr( 'style' ); // remove added property "z-index: 2" (line 14)
+      $startBtn.add( $minAndSec ).removeAttr( 'disabled' );
       wins = losses = draws = 0; //reinitialize all scores to zero
       $( '.score  h2' ).text( 0 ); // all "h2" that are descendants of ".score"
       $minAndSec.val( '' ); //empty the input fields
       validInput = false;
       minutes = seconds = null;
       round++
-      $startBtn.add( $minAndSec ).removeAttr( 'disabled style' ); //default mode
       $user.html('<h2>Round</h2>');
       $bot.html(`<h2>${ round }</h2>`);
   }

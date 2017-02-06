@@ -1,7 +1,7 @@
 'use strict';
 $( document ).ready(function(){
   const $restartBtn = $('#restart-btn');
-  $minAndSec.click( ( ) => {
+  $minAndSec.focus( ( ) => {
     $minAndSec.removeAttr( 'style' ); // reset the input border color
     $inputGroup_h2.text( '' );  // deletes the warning text
   });
@@ -9,8 +9,8 @@ $( document ).ready(function(){
     if (validInput) {
       $minAndSec.add( $startBtn ).prop( 'disabled' , true ) // disable start button and the input
                                  .css( 'cursor' , 'not-allowed' );
-      $( '#rock-btn , #paper-btn , #scissors-btn' ).add( $restartBtn ).prop( 'disabled' , false )// enable the game buttons
-                                                                      .css( 'cursor' , 'default' );
+      $playBtnGroup.add( $restartBtn ).prop( 'disabled' , false )// enable the game buttons
+                                      .css( 'cursor' , 'default' );
       $restartBtn.click( () => { //when restart is clicked
         clearTimeout( tickTimeout ); // stop counter.js from calling tick function
         wins = losses = draws = 0;   // from gameEngine.js reinitialize all scores to zero

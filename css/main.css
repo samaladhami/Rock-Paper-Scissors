@@ -103,7 +103,7 @@ section {
     font-size: 33px;
     text-align: center; }
 
-.my-block, .time-control button, .game-over-wrapper > div button, .dashboard .btn-group button, .dashboard .score div {
+.my-block, .time-control button, .game-over-wrapper > div button, .dashboard .play-btn-group button, .dashboard .score div {
   box-shadow: 1px 1px 2px black, 3px 2px white;
   -webkit-border-radius: 10;
   -moz-border-radius: 10;
@@ -177,16 +177,16 @@ section {
   margin: 5vh 0;
   display: flex;
   justify-content: space-around; }
-  .dashboard .btn-group {
+  .dashboard .play-btn-group {
     display: inline-block; }
-    .dashboard .btn-group button {
+    .dashboard .play-btn-group button {
       font-size: 40px;
       padding: 14px;
       background: white;
       cursor: not-allowed; }
-      .dashboard .btn-group button:hover {
+      .dashboard .play-btn-group button:hover {
         background: lightgray; }
-      .dashboard .btn-group button:active {
+      .dashboard .play-btn-group button:active {
         background: dimgray; }
   .dashboard .score {
     color: white; }
@@ -248,9 +248,9 @@ section {
     width: 164px;
     padding-top: 20px;
     height: 102px; }
-  .dashboard .btn-group button {
+  .dashboard .play-btn-group button {
     padding: 8px; }
-  .dashboard .btn-group .score div {
+  .dashboard .score > div {
     padding: 5px 0;
     width: 58px; } }
 

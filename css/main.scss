@@ -157,7 +157,7 @@ section{
   margin: 5vh 0;
   display: flex;
   justify-content: space-around;
-  .btn-group{
+  .play-btn-group{
     display: inline-block;
     button{
       @extend .my-block;
@@ -259,17 +259,17 @@ section{
     }
   }
   .dashboard{
-    .btn-group{
+    .play-btn-group{
       button{
         padding: 8px;
       }
+    }
     .score{
-      div{
+      >div{
         padding: 5px 0;
         width: 58px;
         }
       }
-    }
   }
 }
 //====================================//
