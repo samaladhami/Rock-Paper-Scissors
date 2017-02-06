@@ -4,7 +4,7 @@ let validInput
   , seconds // will assign to a number from S input field
   , countingThemeInterval // see line 57
   , roundTime // the inupt value
-  //======= often used selectors =========//
+  //======= often used selectors ========//
   , $inputGroup_h2
   , $counter
   , $min
