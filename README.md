@@ -14,11 +14,11 @@ Fork this repo then clone your fork onto your local machine.
 
 on command line
 ```
-git clone https://github.com/samaladhami/Rock-Paper-Scissors.git
+$ git clone https://github.com/samaladhami/Rock-Paper-Scissors.git
 ```
 then
 ```
-npm install
+$ npm install
 ```
 ## Contributions
 If you see a problem or a typo, please fork, make the necessary changes, and create a pull request so I can review your changes and merge them into the master repo and branch.
