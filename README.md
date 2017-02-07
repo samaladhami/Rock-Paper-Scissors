@@ -5,7 +5,7 @@ Hope you know the rules for this game! If not, here is the gist – rock beats s
 ### Objective
 A functional interface that allows a user to play this game with a bot as many times as possible within a stipulated amount of time.
 
-## Getting Started
+## Directions
 
 A few steps will get you a copy of the project up and running on your local.
 

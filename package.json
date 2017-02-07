@@ -19,5 +19,6 @@
   "homepage": "https://github.com/samaladhami/Rock-Paper-Scissors#readme",
   "devDependencies": {
     "node-sass": "^4.5.0"
-  }
+  },
+  "dependencies": {}
 }
