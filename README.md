@@ -12,11 +12,11 @@ A few steps will get you a copy of the project up and running on your local.
 ### Installing
 Fork this repo then clone your fork onto your local machine.
 
-on command line `cd` into the directory then
-
+on command line 
 ```
 $ git clone https://github.com/samaladhami/Rock-Paper-Scissors.git
 ```
+`cd` into the directory then
 ```
 $ npm install
 ```
