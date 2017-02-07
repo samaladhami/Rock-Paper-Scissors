@@ -1,6 +1,6 @@
 # “Rock – Paper – Scissors”
-
-Hope you know the rules for this game! If not, here is the gist – rock beats scissors, scissors beats paper and paper beats rock.
+**Rock-paper-scissors** or *Scissor-Paper-Rock*, is a zero-sum hand game usually played between two people, in which each player simultaneously forms one of three shapes with an outstretched hand.
+the rules for this game: rock beats scissors, scissors beats paper and paper beats rock.
 
 ### Objective
 A functional interface that allows a user to play this game with a bot as many times as possible within a stipulated amount of time.
