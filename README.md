@@ -13,13 +13,16 @@ A few steps will get you a copy of the project up and running on your local.
 Fork this repo then clone your fork onto your local machine.
 
 on command line `cd` into the directory then
-1. ```
+1. 
+```
 $ git clone https://github.com/samaladhami/Rock-Paper-Scissors.git
 ```
-2. ```
+2.
+```
 $ npm install
 ```
-3. ```
+3.
+```
 $ npm run node-sass
 ```
 ## Contributions
