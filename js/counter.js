@@ -24,7 +24,6 @@ function countdown(minutes, seconds = 60) { // set default values to the paramet
         clearInterval( countingThemeInterval ) // clear the counting theme interval (countingThemeInterval from game.js)
         counter.removeAttribute( 'style' ); // reset the counter color and font-size (added from game.js => countingThemeInterval)
         gameOver(); // from gameOver.js to stop the game and show the score
-        return; //exit the function
       }
       else if( secs >= 0 ) {
           tickTimeout = setTimeout( tick, 1000 ); // call tick after 1 second if secs > 0
