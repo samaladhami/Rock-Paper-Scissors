@@ -1,22 +1,22 @@
-'use strict'
+'use strict' // The code below will be executed in "strict mode".
 // the variables out of countdown function so I can have access them it on game.js
 let secs
   , mins
   , currentMinutes
   , tickTimeout;
 //====================================//
-function countdown(minutes, seconds = 60) { // set default values to the parameters minutes = 0 and seconds = 60
+const countdown = (minutes, seconds = 60) => { // seconds = 60 by default
   secs = seconds;
-  mins = minutes
+  mins = minutes;
   //================//
-  function tick() {
+  const tick = () => {
       if (mins >= 0 && secs === 0) {
-        currentMinutes = mins-1;   // subtract 1 from the minutes
+        currentMinutes = mins - 1;
       }
       else {
         currentMinutes = mins
       }
-      secs--;  // subtract 1 from seconds
+      secs--;
       const counter = document.getElementById( "counter" );
       // update the counter
       counter.innerHTML = `${ (currentMinutes < 10 ? '0' + currentMinutes : currentMinutes) }:${ (secs < 10 ? '0' + secs : secs) }`
@@ -26,11 +26,11 @@ function countdown(minutes, seconds = 60) { // set default values to the paramet
         gameOver(); // from gameOver.js to stop the game and show the score
       }
       else if( secs >= 0 ) {
-          tickTimeout = setTimeout( tick, 1000 ); // call tick after 1 second if secs > 0
+          tickTimeout = setTimeout( tick, 1000 );
       }
       else {
           if( mins >= 1 ){
-              countdown( mins-1 );
+              countdown( mins - 1 );
           }
       }
   }

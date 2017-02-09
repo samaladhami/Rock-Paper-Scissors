@@ -16,7 +16,8 @@ $( document ).ready(function(){
     getResult(); // line 28
     $gameOverWrapper.css('z-index' , '2');
     $gameOver.html( // wins, losses and draws from gameEngine.js and roundTime from game.js
-      `<div><h2>Round:${ round }</h2></div>
+      `
+      <div><h2>Round:${ round }</h2></div>
       <h1 style='color: ${ resultTextColor }'>${ resultText }</h1>
       <h2 id= 'your-wins' >Wins: ${ wins }</h2>
       <h2 id= 'your-losses' >Losses: ${ losses }</h2>
@@ -53,11 +54,11 @@ $( document ).ready(function(){
   }
    playAgain = () => {
       $gameOver.empty();
-      $gameOverWrapper.add( $minAndSec ).removeAttr( 'style' ); // remove added property "z-index: 2" (line 14)
+      $gameOverWrapper.add( $minAndSec ).removeAttr( 'style' );
       $startBtn.add( $minAndSec ).removeAttr( 'disabled' );
-      wins = losses = draws = 0; //reinitialize all scores to zero
-      $( '.score  h2' ).text( 0 ); // all "h2" that are descendants of ".score"
-      $minAndSec.val( '' ); //empty the input fields
+      wins = losses = draws = 0;
+      $( '.score  h2' ).text( 0 );
+      $minAndSec.val( '' ); //clear the input fields
       validInput = false;
       minutes = seconds = null;
       round++

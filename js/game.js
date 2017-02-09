@@ -1,8 +1,8 @@
 'use strict';
 let validInput
-  , minutes //will assign to a number from M input field
-  , seconds // will assign to a number from S input field
-  , countingThemeInterval // see line 65
+  , minutes
+  , seconds
+  , countingThemeInterval
   , roundTime // the inupt value
   //======= often used selectors ========//
   , $inputGroup_h2
@@ -26,13 +26,13 @@ $(document).ready(function(){
   $playBtnGroup  = $( '.play-btn-group button' )
   $minAndSec     = $min.add( $sec );
 
-  //======= update the inupt value =======//
+  //======= the inupt value =======//
   $minAndSec.keyup( () => {
     minutes = Number( $min.val() );
     seconds = Number( $sec.val() );
   })
-  //===== function which validates the input value =====//
-  function validateInput(){
+  //===== validate the input value =====//
+  const validateInput = () => {
     if (!minutes && !seconds ) { //If the input is "" or 0 on both fields
       $minAndSec.css( 'border', '1px solid red');
       $inputGroup_h2.text('invalid input');
@@ -53,15 +53,15 @@ $(document).ready(function(){
     }
   };
   //====== start counting =======//
-  $startBtn.click( ( ) => {
+  $startBtn.click( () => {
     validInput = validateInput();
     if( validInput ){
-      roundTime = `${ ( minutes < 10 ? '0' + minutes : minutes)  }:${ ( seconds < 10 ? '0' + seconds : seconds ) }`;
+      roundTime = `${ ( minutes < 10 ? '0' + minutes : minutes )  }:${ ( seconds < 10 ? '0' + seconds : seconds ) }`;
       $counter.animate({ // changes the font-size from 33px to 50px
         'font-size' : '50px'
       })
-      countdown(minutes , seconds); // countdown from counter.js to start counting.
-      // once the user clicks on #start-btn it constantly checks the counter value and changes the its color.
+      countdown( minutes, seconds ); // countdown from counter.js to start counting.
+      //===========================//
       countingThemeInterval = setInterval( () => {
         if(currentMinutes === 0 && secs <= 10 ) { //if the counter < 10 seconds
           $counter.css( 'color' , 'red' );   // Warns ther user with red color

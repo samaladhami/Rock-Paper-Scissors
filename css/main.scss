@@ -7,6 +7,7 @@ $skyColor: #73bef0, white;
 $orange: #ffaa79;
 $greenBtn: #95ff8f, #1a881a;
 $redBtn: #ff9fae, #42000a;
+$border-radius-val: 10px;
 *:focus {
   outline: none;
   box-sizing: border-box;
@@ -36,10 +37,9 @@ header{
 section{
   width: 80%;
   margin: auto;
-  border: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
   padding: 10px;
-  border-top: none;
-  border-bottom: none;
 }
 .input-group{
   height: 72px;
@@ -60,7 +60,7 @@ section{
     color: dimgrey;
     width: 81px;
     height: 56px;
-    border-radius: 5px;
+    border-radius: $border-radius-val;
     border: 2px solid #fbfbfb;
     background: #e0f0fb;
     font-size: 33px;
@@ -69,11 +69,11 @@ section{
 }
 .my-block{
   box-shadow: 1px 1px 2px black, 3px 2px white;
-  border-radius: 10px;
+  border-radius: $border-radius-val;
+  border: none;
   font-size: 18px;
   padding: 10px 20px 10px 20px;
   margin-left: 3vw;
-  border: none;
   margin-top: 10px;
 }
 .time-control{
@@ -92,7 +92,7 @@ section{
     box-shadow: 1px 1px 2px dimgray;
   }
   .start{
-    // background: #95ff8f;
+    background: #95ff8f;
     background-image: -webkit-linear-gradient(top, $greenBtn);
     background-image: -moz-linear-gradient(top, $greenBtn);
     background-image: -ms-linear-gradient(top, $greenBtn);
@@ -128,7 +128,7 @@ section{
   margin-top: 7vh;
   div{
     background: white;
-    border-radius: 10px;
+    border-radius: $border-radius-val;
     display: inline-block;
     width: 187px;
     padding-top: 10px;
@@ -191,7 +191,7 @@ section{
   left: 50%; // to center absolute element?
   top: 21%;
   z-index: -1;
-  >div{
+  > div{
     @extend .time-control;
     padding: 0;
     margin: 0;
@@ -200,9 +200,9 @@ section{
     left: -50%;  //to center game-over-wrapper contents
     width: 423px;
     background: rgba(37, 37, 37, 0.48);
-    border-radius: 10px;
+    border-radius: $border-radius-val;
     box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.48);
-    >div{
+    > div{
       width: 100%;
       background: rgba(255, 255, 255, 0.57);
       border-radius: 10px 10px 0 0;
@@ -250,7 +250,7 @@ section{
     }
   }
   .show-chosen {
-    >div{
+    > div{
       width: 164px;
       padding-top: 20px;
       height: 102px;
@@ -263,11 +263,11 @@ section{
       }
     }
     .score{
-      >div{
+      > div{
         padding: 5px 0;
         width: 58px;
-        }
       }
+    }
   }
 }
 //====================================//
@@ -283,14 +283,14 @@ section{
       margin-top: 7vh;
     }
   }
-  .time-control {
+  .time-control{
     margin: 17px 0 0 0;
     h2{
      display: block;
    }
   }
   .game-over-wrapper{
-    >div{
+    > div{
       width: 306px;
     }
   }

@@ -1,7 +1,7 @@
 'use strict'
-let chooseOne // see line 12
+let chooseOne
   , wins   = 0//
-  , losses = 0//// all scores start with 0
+  , losses = 0//// The scores
   , draws  = 0;//
 //====================================//
 $(document).ready(function(){
@@ -9,7 +9,7 @@ $(document).ready(function(){
     , botChose;
   const botChoseArray = [ 'rock' , 'paper' , 'scissors' ]; //the bot choose randomly from this array
 //
-  chooseOne = function(obj){ // a function that takes in an object (which is gonna be "this keyword" ) and I added 'onclick = "chooseOne( this )"' to rock-btn, paper-btn and scissors-btn.
+  chooseOne = function(obj){ // a function that takes in an object ( 'onclick = "chooseOne( this )"' ) is added to rock-btn, paper-btn and scissors-btn.
       userChose = obj.value; // assign userChose to the value attribute value on the clicked button (see index.htm .dashboard > .play-btn-group > button )
       $user.html(`<img src="imgs/${ userChose }.png" alt="${ userChose }" />`); //adds a new image
       botTurn();
@@ -23,8 +23,8 @@ $(document).ready(function(){
   //=========================//
   function getScore(){
     if(userChose === botChose) { // if Draw
-        draws++; //increments draws variable
-        $( '.draws > h2' ).text( draws ); // updates draws block
+        draws++;
+        $( '.draws > h2' ).text( draws );
       }
     else if(
              userChose === 'rock' && botChose === 'scissors'  ////
