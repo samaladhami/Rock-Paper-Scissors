@@ -43,6 +43,11 @@ $(document).ready(function(){
       $inputGroup_h2.text('the minimum time is 00:03');
       return false;
     }
+    else if( minutes > 99 ) { //If the input is less than 00:03
+      $minAndSec.css( 'border', '1px solid red');
+      $inputGroup_h2.text('the maximum time is 99:60');
+      return false;
+    }
     else if( seconds  > 60 ) {  //If the user input seconds greater than 60s
       $sec.css( 'border', '1px solid red');
       $inputGroup_h2.text('The seconds must be less than 60');
